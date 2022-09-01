@@ -4,9 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Table of contents
 * [General info](#general-info)
-* [Stack Technology](#technologies)
-* [Available Scripts](#scripts)
-* [Learn More](#more)
+* [Stack Technology](#stack-technology)
+* [Available Scripts](#avalaible-scripts)
+* [Learn More](#learn-more)
 
 ## General info
 This project was created to practice ReactJS.
