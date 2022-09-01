@@ -1,0 +1,52 @@
+.similarRecipesCard-wrapper{
+        
+    .similarRecipesCard-header{
+        color: var(--special-color);;
+        margin-top: 70px;
+    }
+
+    .similarRecipesCard-content{
+        display: flex;
+        flex-direction:row;
+        width:100%;
+        justify-content:center;
+        
+
+        .card{
+            width:200px;
+            margin:5px;
+            color: rgb(59, 62, 233);
+
+            .card-img-top{
+                width:auto;
+                height:200px;
+                object-fit: scale-down;
+
+                
+            }
+
+            .card-body{
+                .card-subtitle{
+                    height:60px;
+                }
+            }
+        }
+    
+    }
+
+}
+
+@media (max-width: 1150px){
+    
+    .similarRecipesCard-wrapper{
+
+            .similarRecipesCard-content{
+                display: flex;
+                flex-wrap: wrap;
+                
+            }
+
+        
+    }
+
+}

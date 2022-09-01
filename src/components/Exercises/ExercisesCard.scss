@@ -1,0 +1,63 @@
+.exercises-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px,16rem));
+    justify-content: space-around;
+    padding-bottom: 10px;
+    margin-top:20px;
+
+
+    .card-content{
+        margin:0;
+        text-decoration: none;
+        color: black;
+    }
+
+    .card{
+        margin-bottom: 10px;
+        width: 16rem;
+        
+
+        .card-body{
+            margin:0;
+
+            .card-title{
+                font-size: 18px;
+                height:70px
+            }
+        }
+
+        
+    }
+}
+
+@media(max-width: 620px){
+    
+    
+    .exercises-cards{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    
+        
+        .card{
+            width:9.5rem;
+            
+            .card-body{
+            
+                .card-title{
+                    height: 90px;
+                    font-size: 15px;
+                }
+
+                .card-subtitle{
+                    font-size: 12px;
+                }
+
+            }
+
+        }
+
+    }
+    
+}

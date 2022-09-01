@@ -1,0 +1,137 @@
+.recipeCards {
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    //margin-bottom: 10px;
+    height: 250px;
+    //padding: 5px;
+  }
+
+  .card-img-left {
+    width: 250px;
+    //height: 250px;
+    position: relative;
+    max-width: 300px;
+    max-height: 250px;
+    object-fit: scale-down;
+  }
+
+  .card-body {
+    width: 70%;
+    padding: 10px;
+    margin: 0;
+    
+  }
+
+  .card-title {
+    text-align: center;
+    margin-bottom: 0;
+    height:48px;
+  }
+
+  .recipeCard-info {
+    display: flex;
+    justify-content: space-between;
+    height:calc(100% - 38px);//38=48-10
+    
+
+    .pieChart-side {
+      width: 170px;
+      //height: 100%;
+      display:flex;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      margin-bottom: 10px;
+      margin-left: 5%;
+      
+      
+      
+        .pieChart-wrapper {
+          float: left;
+          width:170px;
+          
+          .chart{
+            width:170px;
+          }
+
+          .macros{
+            display: none;
+
+          }
+        }
+    }
+
+    .shortInfo-side {
+      width: calc(100% - 170px);
+      text-align: center;
+      
+      display: flex;
+      
+      flex-wrap: wrap;
+      color: var(--grey-color);
+      align-content: flex-end;
+      
+      p{
+        width:100%;
+        font-size: 80%;
+      }
+      
+      .ratings {
+        font-weight: 300;
+        font-size: 18px;
+    
+        span {
+          vertical-align: middle;
+          //font-size: 20px;
+        }
+    
+        i {
+          font-size: 25px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+@media (min-width: 920px) and (max-width: 1270px){
+
+  .recipeCards{
+    .recipeCard-info{
+      .pieChart-side{
+        width: 400px;
+      
+        .pieChart-wrapper{
+          display:flex;
+          flex-direction: row;
+          width:400px;
+          
+        
+      
+          .macros{
+           
+            display:flex;
+            flex-wrap: wrap;
+            align-content: flex-end;
+            
+
+            .macro-attribute{
+              width:100%;
+            }
+          }
+
+        }
+      }
+    .shortInfo-side {
+      width: calc(100% - 400px);
+    }
+  }
+  }
+}
+
+
+
