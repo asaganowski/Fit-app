@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 
 import './RecipeDetail.scss';
 import {Button} from 'react-bootstrap';
@@ -36,11 +36,12 @@ export default function RecipeDetail(){
             <div className="recipeDetail-content">
 
                 <div className="mealImage-side">
-                    <img src={recipe?.display?.images} className="mealImage" alt="image"/>
+                    <img src={recipe?.display?.images} className="mealImage" alt="meal"/>
 
                     <a 
                         href={recipe?.display?.source?.sourceRecipeUrl}
                         target="_blank" 
+                        rel="noreferrer"
                     >   
                         <Button variant="link">Did you like it? Click to see full recipe and instructions!</Button>
                     </a>
@@ -106,7 +107,7 @@ export default function RecipeDetail(){
             </div>  
             <div className="similarRecipesCard-wrapper" >
 
-                <h2 className="similarRecipesCard-header">Check out some other, similar recipes: </h2>
+                <h2 className="similarRecipesCard-header" >Check out some other, similar recipes: </h2>
 
                 <div className="similarRecipesCard-content">
 
