@@ -78,9 +78,12 @@ export default function RecipeDetail(){
                                 {recipe?.content?.ingredientLines.slice(0,7).map((ingredients, index) => {
                     
                                     return (
-                                        <ListGroup className="list-group">
+                                        <ListGroup 
+                                            className="list-group"
+                                            key={index}
+                                            >
                                 
-                                            <ListGroup.Item key={index}>
+                                            <ListGroup.Item>
                                                 {ingredients.ingredient.toString().charAt(0).toUpperCase()+ingredients.ingredient.slice(1)}
                                             </ListGroup.Item>
                         
