@@ -3,6 +3,7 @@ import './RecipeCard.scss';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";
 import  PieChart  from "./PieChart";
+import 'remixicon/fonts/remixicon.css'
 
 
 
@@ -44,7 +45,7 @@ export default function RecipeCard({recipe}){
                   {recipe?.content?.reviews?.averageRating!==null &&
                   
                     <p className="ratings" style={{color: color}}>
-                      <i className="ri-user-star-line"/> 
+                      <i className="ri-user-star-line"/>
                       <span>{recipe?.content?.reviews?.averageRating?.toFixed(2)}/5</span></p>
                   }
                 </div>
