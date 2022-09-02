@@ -11,22 +11,69 @@
 
         display: flex;
         justify-content: space-between;
+        margin-bottom: 20px;
+
+        h5{
+            color: var(--special-color);
+            margin-bottom: 5px;
+        }
+
+        h5::last-child{
+            text-align: right;
+        }
     
         .selectors{
-            display: block;
-            margin-bottom: 20px;
-
-            h4{
-                color: var(--special-color);
-            }
+            display: flex;
+            flex-direction: column;
             
+
             .attributeSelector, .attributePicker{
                 
-                width:200px;
-                margin: 10px 0;
+                width:150px;
+                margin:0;
+                margin-bottom: 10px;
+                font-size: 13px;
                 
             }
 
+        }
+
+
+        .ingredient-picker{
+
+            position: relative;
+
+            .ingredient-input{
+                vertical-align: middle;
+                border-radius: 5px;
+                height: 38px;
+                border: 0.8px black solid;
+                width:130px;
+                font-size: 13px;
+                
+
+            }
+
+            .btn{
+                vertical-align: middle;
+                border-radius: 5px;
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                width:38px;
+                position:absolute;
+                right:0;
+                height: 38px;
+
+                i.fa-search{
+                    
+                    align-items: center;
+                    display: flex;
+                    font-size: 15px;
+                    justify-content: center;
+                    
+                }
+
+            }
         }
 
     }   
