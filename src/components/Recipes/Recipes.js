@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import './Recipes.scss';
 import Select from 'react-select';
-import { useGetRecipesByTagQuery, useGetTagsQuery } from "../../services/getRecipes";
+import { useGetRecipesByParamsQuery, useGetTagsQuery } from "../../services/getRecipes";
 import RecipeCard from "./RecipeCard"
 import Loading from "../Loading/Loading";
 import {
@@ -18,7 +18,7 @@ export default function Recipes({homeView}){
 
   const[attribute,setAttribute]  = useState("")
   const[ingredient, setIngredient] = useState("")
-  //const[q, setQ] = useState("")
+  const[q, setQ] = useState("")
   const[category, setCategory] = useState("---")
   const[isVisible, setIsVisible] = useState(false)
   
@@ -33,13 +33,13 @@ export default function Recipes({homeView}){
       setIsVisible(false)
       setAttribute("")
       }
-  }); 
+  },[category]); 
 
 
   const count = homeView ? 4 : 40;
 
             
-  const {data:recipes,isLoading}=useGetRecipesByTagQuery({
+  const {data:recipes,isLoading}=useGetRecipesByParamsQuery({
        ingredient,
        attribute
   }) // some recipes doesnt have macros data which are neccessary for me, that is why I have 18 recipes fetched first, and then used slice() method
@@ -98,6 +98,13 @@ const renderAttributes = (category) => {
       
   }
 }
+
+const onSubmit = e =>{
+  e.preventDefault()
+  console.log(q)
+  setIngredient(q)
+
+}
     
 if(isLoading) return <Loading/>
 
@@ -110,7 +117,7 @@ if(isLoading) return <Loading/>
           <div className="filters">
             
             <div className="selectors">
-                <h4>Filter by:</h4>
+                <h5>Filter by:</h5>
                 <Select
                   options={categories}
                   className="attributeSelector"
@@ -154,7 +161,7 @@ if(isLoading) return <Loading/>
                       <div style={{ display: 'flex', alignItems: 'center'}}>
                         
                         {e.icon!==null && 
-                        <img style={{width:"30px", height:"100%" }} src={e?.icon} />}
+                        <img style={{width:"30px", height:"100%" }} src={e?.icon} alt="icon"/>}
                         <span style={{ marginLeft: e.icon!==null ? "5px" : "0"}}>{e?.label}</span>
                       </div>)
                     }}
@@ -162,6 +169,25 @@ if(isLoading) return <Loading/>
                   />
 
                 }
+              </div>
+
+              <div className="ingredient-picker">
+                <h5>Type: </h5>
+                
+                <form onSubmit={onSubmit}>
+                  
+                  <input
+                    className="ingredient-input" 
+                    type="search"
+                    onChange={(ingredient)=>{
+                      setQ(ingredient.target.value)
+                      }
+                    }
+                    placeholder=" Ingredient"
+                  />
+
+                  <Button type="submit"><i className="fas fa-search"/></Button>
+                </form>
               </div>
             </div>
         }
