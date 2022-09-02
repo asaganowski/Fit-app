@@ -26,7 +26,7 @@ export const recipes = createApi({
       query: () => request(`tags/list`),
     }),
 
-    getRecipesByTag:builder.query({
+    getRecipesByParams:builder.query({
       query: ({ingredient, attribute}) => request(`feeds/search?start=0&maxResult=18&q=${ingredient}&allowedAttribute=${attribute}`),
     }),
 
@@ -34,4 +34,4 @@ export const recipes = createApi({
   }),
 })
 
-export const {useGetRecipesByIdQuery, useGetRecipesByTagQuery, useGetSimilarRecipesByIdQuery, useGetTagsQuery} = recipes
+export const {useGetRecipesByIdQuery, useGetRecipesByParamsQuery, useGetSimilarRecipesByIdQuery, useGetTagsQuery} = recipes
