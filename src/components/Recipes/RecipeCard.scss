@@ -1,137 +1,224 @@
-.recipeCards {
+$border-radius: 0.3rem;
+
+.recipeCards-content {
+
   .card {
     position: relative;
     display: flex;
     flex-direction: row;
-    //margin-bottom: 10px;
-    height: 250px;
-    //padding: 5px;
-  }
+    height:250px;
+    border-radius: $border-radius;
 
-  .card-img-left {
-    width: 250px;
-    //height: 250px;
-    position: relative;
-    max-width: 300px;
-    max-height: 250px;
-    object-fit: scale-down;
-  }
+    .card-img-left {
+      width: 250px;     
+      object-fit: scale-down;
+      border-bottom-left-radius: $border-radius;
+      border-top-left-radius: $border-radius;
+    }
 
-  .card-body {
-    width: 70%;
-    padding: 10px;
-    margin: 0;
+    .card-body {
+      width: 70%;
+      padding: 10px;
+      margin: 0;
+
+      .card-title {
+        text-align: center;
+        margin-bottom: 0;
+        height:48px;
+        color: blue;
+      }
+
+      .recipeCard-info {
+        display: flex;
+        justify-content: space-between;
+        height:calc(100% - 38px);//38=48-10
+        
     
-  }
-
-  .card-title {
-    text-align: center;
-    margin-bottom: 0;
-    height:48px;
-  }
-
-  .recipeCard-info {
-    display: flex;
-    justify-content: space-between;
-    height:calc(100% - 38px);//38=48-10
-    
-
-    .pieChart-side {
-      width: 170px;
-      //height: 100%;
-      display:flex;
-      flex-wrap: wrap;
-      align-content: flex-end;
-      margin-bottom: 10px;
-      margin-left: 5%;
-      
-      
-      
-        .pieChart-wrapper {
-          float: left;
-          width:170px;
+        .pieChart-side {
+          width: 170px;
+          display:flex;
+          flex-wrap: wrap;
+          align-content: flex-end;
+          margin-bottom: 10px;
+          margin-left: 5%;
           
-          .chart{
-            width:170px;
-          }
-
-          .macros{
-            display: none;
-
-          }
-        }
-    }
-
-    .shortInfo-side {
-      width: calc(100% - 170px);
-      text-align: center;
-      
-      display: flex;
-      
-      flex-wrap: wrap;
-      color: var(--grey-color);
-      align-content: flex-end;
-      
-      p{
-        width:100%;
-        font-size: 80%;
-      }
-      
-      .ratings {
-        font-weight: 300;
-        font-size: 18px;
+          
+          
+            .pieChart-wrapper {
+              
+              
+              .chart{
+                width:170px;
+              }
     
-        span {
-          vertical-align: middle;
-          //font-size: 20px;
+              .macros{
+                display: none;
+    
+              }
+            }
         }
     
-        i {
-          font-size: 25px;
-          vertical-align: middle;
+        .shortInfo-side {
+          width: calc(100% - 170px);
+          text-align: center;
+          display: flex;
+          flex-wrap: wrap;
+          color: var(--grey-color);
+          align-content: flex-end;
+          
+          p{
+            width:100%;
+            
+          }
+          
+          p.ratings {
+            font-weight: 300;
+            font-size: 18px;
+            
+        
+            span {
+              vertical-align: middle;
+            }
+        
+            i {
+              font-size: 25px;
+              vertical-align: middle;
+            }
+          }
         }
       }
+      
     }
+    
   }
-
-
-
 }
 
 @media (min-width: 920px) and (max-width: 1270px){
 
-  .recipeCards{
-    .recipeCard-info{
-      .pieChart-side{
-        width: 400px;
-      
-        .pieChart-wrapper{
-          display:flex;
-          flex-direction: row;
-          width:400px;
+  .recipeCards-content{
+    .card{
+      .card-body{
+        .recipeCard-info{
+          .pieChart-side{
+            width: 400px;
           
-        
-      
-          .macros{
-           
-            display:flex;
-            flex-wrap: wrap;
-            align-content: flex-end;
+            .pieChart-wrapper{
+              display:flex;
+              flex-direction: row;
+              width:400px;
+              
             
+          
+              .macros{
+               
+                display:flex;
+                flex-wrap: wrap;
+                align-content: flex-end;
+                
+    
+                .macro-attribute{
+                  width:100%;
+                  font-size: 15px;
+                  margin-bottom: 12px;
 
-            .macro-attribute{
-              width:100%;
+                  small{
+                    font-size: 12px;
+                  }
+                }
+              }
+    
             }
           }
+          .shortInfo-side {
+            width: calc(100% - 400px);
 
+          }
         }
       }
-    .shortInfo-side {
-      width: calc(100% - 400px);
     }
-  }
+    
   }
 }
 
 
+@media (max-width: 625px){
 
+    .recipeCards-content{
+      .card{
+        height:10em;
+
+        .card-img-left{
+          width: 10em;
+          
+          object-fit: scale-down;
+        }
+        .card-body{
+
+          padding: 5px;
+
+          .card-title{
+            font-size: 16px;
+          }
+
+          .recipeCard-info{
+            .pieChart-side{
+              width: 55%;
+              
+              
+              .pieChart-wrapper{
+                .chart{
+                  display:none;
+                }
+                .macros{
+                  
+                  margin-left: 0;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-end;
+                  
+                  text-align: center;
+                  flex-wrap: wrap;
+                    
+
+                  .macro-attribute{
+                    margin-bottom: 3px;
+                    font-size: 10.5px;
+
+                    small{
+                      font-size: 8px;
+                    }
+                    
+                  }
+
+                  p.macro-attribute:last-child{
+                    margin-bottom: 0;
+                  }
+                }
+              }
+
+            }
+
+            .shortInfo-side{
+              width: 45%;
+              margin-bottom: 0;
+              p{
+                margin-bottom: 5px;
+                font-size: 12px;
+              }
+              
+              p.ratings{
+                  font-size: 15px;
+
+                  i{
+                    font-size: 18px;
+                  }
+               
+              }
+            }
+          }
+        }
+
+      }
+    }
+  
+}

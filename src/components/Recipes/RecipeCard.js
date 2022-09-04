@@ -11,7 +11,7 @@ export default function RecipeCard({recipe}){
 
 
   //console.log(recipes)
- const color= recipe?.content?.reviews?.averageRating > 3.5 ? "rgb(58, 214, 84)" : "red" 
+ const color= recipe?.content?.reviews?.averageRating > 3.5 ? "green" : "red" 
   
     
     return (
@@ -19,7 +19,7 @@ export default function RecipeCard({recipe}){
 
         <Link 
           to={`/recipeDetails/${recipe?.content.details.id}`}
-          className="recipeCards"
+          className="recipeCards-content"
           >
           <Card>
             <Card.Img variant="left" src={recipe?.display.images} alt="mealImage"/>
@@ -35,7 +35,7 @@ export default function RecipeCard({recipe}){
                 </div>
 
                 <div className="shortInfo-side">
-                  <p>{recipe?.content?.details?.totalTime}</p>  
+                  <p>{recipe?.content?.details?.totalTime.toLowerCase()}</p>  
                   
                   {recipe?.content?.tags.cuisine!==undefined &&
                   <p>{recipe?.content?.tags?.cuisine[0]["display-name"]}</p>}
