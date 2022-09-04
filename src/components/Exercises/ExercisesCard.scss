@@ -22,7 +22,12 @@
 
             .card-title{
                 font-size: 18px;
-                height:70px
+                height:70px;
+                color: blue;
+            }
+
+            .card-subtitle{
+                color: var(--grey-color);
             }
         }
 
