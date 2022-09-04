@@ -9,8 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * [Learn More](#learn-more)
 
 ## General info
-This project was created to practice ReactJS.
-Content is close to me, because I love sport activity. I regularly go to the gym and I am trying to eat healthy.    
+This project was created to practice ReactJS. 
 	
 ## Stack Technology
 Project was created with:
