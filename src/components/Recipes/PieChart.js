@@ -22,7 +22,7 @@ ChartJS.register(
 export default function PieChart(props){
 
     
-    const macros=["Protein", "Carbohydrates", "Fat"]
+    const macrosName=["Protein", "Carbs", "Fat"]
 
     const macrosData=[]
 
@@ -31,14 +31,14 @@ export default function PieChart(props){
     for(let i=0;i<allMacros?.length;i++){
         if(allMacros[i].attribute === "PROCNT" || allMacros[i].attribute === "FAT" || allMacros[i].attribute === "CHOCDF")
 
-        macrosData.push(allMacros[i].value)
+        macrosData.push(allMacros[i].display.value)
 
     }
   
     
 
 const data ={
-    labels: macros,
+    labels: macrosName,
     datasets: [
         {
             data:macrosData,
@@ -88,7 +88,7 @@ const options = {
 
 const getValue = (allMacros, attribute ) => {
     return allMacros?.find((array)=>
-    array.attribute===attribute)?.value
+    array.attribute===attribute)?.display.value
 }
 
 
@@ -105,14 +105,14 @@ const getValue = (allMacros, attribute ) => {
                       color: "black"
                       }}
                       className="macros">
-                        <p className="macro-attribute">Total Energy: {getValue(allMacros, "ENERC_KCAL")} kcal </p>
+                        <p className="macro-attribute">Energy: {getValue(allMacros, "ENERC_KCAL")}kcal </p>
 
-                        <p className="macro-attribute" style={{color: 'rgba(70, 110, 220, 0.8)'}}>Protein: {macrosData[0]} g </p>
+                        <p className="macro-attribute" style={{color: 'rgba(70, 110, 220, 0.8)'}}>Protein: {macrosData[0]}g </p>
                         
-                        <p className="macro-attribute" style={{color: 'rgba(0, 200, 0, 0.8)'}}>Carbohydrates: {macrosData[1]} g<br/>
-                        <small>(Sugar: {getValue(allMacros, "SUGAR")}) </small></p>
+                        <p className="macro-attribute" style={{color: 'rgba(0,128,0, 0.8)'}}>Carbs: {macrosData[1]}g<br/>
+                        <small className="macro-attribute">(Sugar: {getValue(allMacros, "SUGAR")}g) </small></p>
 
-                        <p className="macro-attribute" style={{color: 'rgba(200, 0, 0, 0.8)'}}>Fat: {macrosData[2]} g </p>
+                        <p className="macro-attribute" style={{color: 'rgba(200, 0, 0, 0.8)'}}>Fat: {macrosData[2]}g </p>
                     </div>
 
                 </div>
