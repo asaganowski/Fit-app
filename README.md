@@ -11,11 +11,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## General info
 This project was created to practice ReactJS.
 Content is close to me, because I love sport activity. I regularly go to the gym and I am trying to eat healthy.    
-
-Soon the website will be extended with full adjustment for smaller devices and new functionalities.
 	
 ## Stack Technology
-Project is created with:
+Project was created with:
 * ReactJS
 * SCSS
 * React Router
