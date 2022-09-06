@@ -13,7 +13,7 @@ import {
   } from "../images/photos";
 import { Button } from "react-bootstrap";
 
-  
+
 export default function Recipes({homeView}){
 
   const[attribute,setAttribute]  = useState("")
@@ -183,7 +183,7 @@ if(isLoading) return <Loading/>
                       setQ(ingredient.target.value)
                       }
                     }
-                    placeholder=" Ingredient"
+                    placeholder=" Key Word"
                   />
 
                   <Button type="submit"><i className="fas fa-search"/></Button>
