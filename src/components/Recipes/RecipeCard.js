@@ -35,7 +35,7 @@ export default function RecipeCard({recipe}){
                 </div>
 
                 <div className="shortInfo-side">
-                  <p>{recipe?.content?.details?.totalTime.toLowerCase()}</p>  
+                  <p>{recipe?.content?.details?.totalTime?.toLowerCase()}</p>  
                   
                   {recipe?.content?.tags.cuisine!==undefined &&
                   <p>{recipe?.content?.tags?.cuisine[0]["display-name"]}</p>}
