@@ -3,81 +3,193 @@
     display: block;
     width:85%;
     margin: 20px auto;
+    max-width: 1400px;
+    background-color: rgb(248, 235, 235);
+    border-radius: 20px;
 
     .recipeDetail-content{
     
         width:100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        
+
+        .link-to-page{
+            
+            margin: 20px auto;
+            
+        }
+        
 
         .special-text{
 
             color: var(--special-color);;
             text-shadow: 0.8px 0.8px rgb(0, 0, 0) ;
             text-align: center;
+            margin-bottom: 50px;
 
         }
     
-        .mealImage-side{
+        .image-and-info{
             
-            width:40%;
-            display: block;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
 
-            .mealImage{
+
+            .meal-image{
                 
-                max-height: 1100px;
-                max-width: 100%;
-            }
-
-            .btn-link{
-                border: 1px rgb(255, 0, 0) dotted;
-                margin-top: 10px;
+                object-fit:scale-down;
                 position: relative;
-                padding-left: 0;
+                width:50%;
                 
+                img{
+                    border-radius: 20px;
+                    max-width: 450px;
+                    max-height: 400px;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    
+                }
+
             }
-            
+
+            .info-and-share{
+
+                display:flex;
+                flex-direction: column;
+                width: 48%;
+                
+
+                .info{
+                    
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    
+                    .quick-info{
+                        margin: 20px;
+                        margin-top: 40px;
+                        
+    
+                        svg,img{
+                            width:50px;
+                            height:50px;
+                            margin-left: auto;
+                            margin-right: auto;
+                            display: block;
+                            
+                        }
+    
+                        img{
+                            border-radius: 50px;
+                        }
+    
+                        p.text{
+                            text-align: center;
+                            font-size: 14px;
+                            width:100%;
+                            
+                        }
+
+                        
+                    }
+
+                    
+                    
+                }
+
+                .shareVia{
+
+                    h5{
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+
+                    .share-links{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+
+                        .shareBtn{
+                            padding: 10px;
+                            margin:5px;
+                            border-radius: 10px;
+                            align-items: center;
+                            
+                        }
+
+                        .shareBtn:hover{
+                            opacity: 0.7;
+                        }
+
+                        svg{
+                            font-size: 18px;
+                        }
+
+                        .mail{
+                            background-color: rgb(255, 255, 255);
+                            color: rgb(237, 96, 96);
+                            margin-right: 2px;
+                        }
+
+                        .facebook{
+                            background-color: blue;
+                            color: white;
+                        }
+
+                        .twitter{
+                            color: rgb(34, 187, 238);
+                            margin-left: 0;
+                            padding-left: 0;
+                        }
+
+
+                    }
+
+                }
+
+            }
+
         }
 
-        
-
-        .recipe-info{
-            position:relative;
-            width:60%;
-
-            .shortInfo{
-                color: var(--grey-color);
-                text-align: center;
-                
-            }
-
-            .title{
-                    
-                font-size: 45px;
-                
-            }
             
-
-            .chart-and-ingredients{
+            
+       .chart-and-ingredients{
+        
                 display: flex;
                 justify-content: space-between;
+                margin: 20px 0;
 
                 .ingredients-side{
                     
-                    width:40%;
-                    margin-top: 20px;
+                    
+                    width:50%;
+                    margin-top: 5px;
         
                     .ingredientsList{
 
                         background-color: rgb(255, 255, 255);
+                        width:350px;
+                        margin: 0 auto;
                         border-radius: 10px;
                         border: 1px solid var(--grey-color);
+
+                        .ingredients-title{
+                            margin-bottom: 10px;
+                        }
                         
-                        .extraIngredients{
-                            color: var(--special-color);;
-                            text-align: center;
-                            margin:0
-                            
+                        button{
+                                margin: 0 auto 5px;
+                                width: 100%;
+                                border: none;
+                                background-color: white;
+                                color: var(--special-color)
+                        }
+
+                        button:hover{
+                            opacity: 0.8;
                         }
 
                         .list-group-item{
@@ -91,7 +203,7 @@
 
                 .chart-side{
                     position: relative;
-                    width: 60%;
+                    width: 50%;
                     
                     .chart{
                         margin: 10px auto;
@@ -103,7 +215,7 @@
                         }
                     }
                 }
-            }
+            
         }
  
     }
@@ -111,7 +223,7 @@
     
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1240px){
 
     .recipeDetail-wrapper{
 
@@ -119,21 +231,37 @@
 
         .recipeDetail-content{
 
-            .recipe-info{
+            .image-and-info{
 
-                .title{
-                    font-size: 30px;
-                }
+                .info-and-share{
 
-                .ingredientsList{
-                    .list-group{
-                        .list-group-item{
-                            font-size: 5px;
+                    .info{
+
+                        .quick-info{
+
+                            svg,img{
+                                width:40px;
+                                height:40px;
+                            }
+
+                            p.text{
+                                text-align: center;
+                                font-size: 12px;
+                                width:100%;
+                                
+                            }
                         }
                     }
 
-                    .ingredients-title{
-                        font-size: 20px;
+                    .shareVia{
+
+                        .share-links{
+
+
+                            .shareBtn{
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
             }
@@ -144,4 +272,5 @@
     }
 
 }
+
 

@@ -5,7 +5,7 @@ import './SimilarRecipesCard.scss';
 
 export default function SimilarRecipesCard({recipe}){
 
-    const color= recipe?.content?.reviews?.averageRating>3.5 ? "rgb(58, 214, 84)" : "red" 
+    const color= recipe?.content?.reviews?.averageRating>3.5 ? "green" : "red" 
 
     console.log(recipe)
 
