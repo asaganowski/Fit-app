@@ -183,7 +183,7 @@ if(isLoading) return <Loading/>
                       setQ(ingredient.target.value)
                       }
                     }
-                    placeholder=" Key Word"
+                    placeholder=" Keyword"
                   />
 
                   <Button type="submit"><i className="fas fa-search"/></Button>
