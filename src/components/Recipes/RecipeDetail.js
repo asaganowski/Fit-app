@@ -6,7 +6,7 @@ import { useGetRecipesByIdQuery, useGetTagsQuery, useGetSimilarRecipesByIdQuery 
 import ListGroup from 'react-bootstrap/ListGroup';
 import PieChart from "./PieChart";
 import Loading from "../Loading/Loading"
-import SimilarRecipesCard from "./SimilarRecipesCard"
+import ShortVersionCard from "./ShortVersionCard"
 import { useParams } from "react-router-dom";
 import{
     FaUsers,
@@ -34,33 +34,27 @@ export default function RecipeDetail(){
     const {data:similarRecipes, isFetching: fetching} = useGetSimilarRecipesByIdQuery(recipeId)
 
 
-
     console.log(tags)
 
     
     if (isFetching || fetching) return <Loading />;
 
     const recipe = data?.feed[0]
-
-
-  const rand=Math.floor(Math.random() * 11);//to avoid showing same, similar recipes, all the time :/
-  
     
   const linkName=readMore ? 'Read Less << ':' Read More >> '
-  const moreIngredients=<div>
-     {recipe?.content?.ingredientLines.slice(7).map((ingredients,index) => {
+  const moreIngredients=<ListGroup>{recipe?.content?.ingredientLines.slice(7).map((ingredients,index) => {
                
                return (
-                   <ListGroup className="list-group-flush" key={index}>
            
-                       <ListGroup.Item ><input type="checkbox"/>&emsp;{ingredients.ingredient.toString().charAt(0).toUpperCase()+ingredients.ingredient.slice(1)}</ListGroup.Item>
+                       <ListGroup.Item key={index}><input type="checkbox"/>{ingredients.ingredient.toString().charAt(0).toUpperCase()+ingredients.ingredient.slice(1)}</ListGroup.Item>
    
-                   </ListGroup>
+                   
                    )
            })}
-  </div>
+  </ListGroup>
 
-  console.log(recipe?.content?.ingredientLines.length)
+    const rand=Math.floor(Math.random() * 11);//to avoid showing same, similar recipes, all the time :/
+
 
   const cuisineIcon = tags?.["en-US"]?.cuisine?.find((data)=>{
     return data?.description===recipe?.content?.tags?.cuisine?.[0]?.["display-name"]
@@ -188,6 +182,7 @@ export default function RecipeDetail(){
 
                                 {recipe?.content?.ingredientLines.length>8 &&
                                     <button 
+                                        type="button"
                                         onClick={()=>{setReadMore(!readMore)}}
                                         >{linkName}
                                     </button>
@@ -213,16 +208,16 @@ export default function RecipeDetail(){
                 </a>
                 
             </div>  
-            <div className="similarRecipesCard-wrapper" >
+            <div className="similarRecipesCards-wrapper" >
 
-                <h2 className="similarRecipesCard-header" >Check out some other, similar recipes: </h2>
+                <h2 className="similarRecipesCards-header" >Check out some other, similar recipes: </h2>
 
-                <div className="similarRecipesCard-content">
+                <div className="similarRecipesCards-content">
 
                     {similarRecipes?.feed?.slice(rand,rand+4).map((recipes, index) => {
                         
                         return(
-                            <SimilarRecipesCard recipe={recipes} key={index}/>
+                            <ShortVersionCard recipe={recipes} key={index}/>
                         )})}
                 </div>
                 

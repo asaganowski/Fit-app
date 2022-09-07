@@ -1,0 +1,173 @@
+.similarRecipesCards-wrapper{
+
+        
+    .similarRecipesCards-header{
+        color: var(--special-color);;
+        margin: 30px auto 20px 10px;
+    }
+
+    .similarRecipesCards-content{
+        display: flex;
+        flex-direction:row;
+        width:100%;
+        justify-content:center;
+        
+        .shortVersion-card{
+
+            .card{
+                width:200px;
+                margin:5px;
+                color: rgb(68, 70, 220);
+    
+                .card-img-top{
+                    
+                    height:200px;
+                    object-fit: scale-down;
+                    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    
+                    
+                }
+    
+                .card-body{
+                    .card-subtitle{
+                        height:60px;
+                        
+                    }
+    
+                    .ratings{
+    
+                        i,span{
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    
+    }
+
+}
+
+@media (max-width: 1080px){
+    
+    .similarRecipesCards-wrapper{
+
+            .similarRecipesCards-content{
+
+                display: flex;
+                flex-wrap: wrap;
+
+                .shortVersion-card{
+
+                    .card{
+                        width:9.5rem;
+    
+                        .card-img-top{
+                            height: 9.5rem;
+                        }
+    
+                        .card-subtitle, .ratings{
+    
+                            font-size: 80%;
+    
+                        }
+    
+                    }
+
+                }
+                
+            }
+
+        
+    }
+
+}
+
+@media (max-width: 830px){
+    
+    .similarRecipesCards-wrapper{
+
+            .similarRecipesCards-header{
+                font-size: 20px;
+            }
+
+            .similarRecipesCards-content{
+
+                
+                display: grid;
+                grid-template-columns: repeat(2,12rem);
+                grid-gap: 10px;
+                justify-content: space-around;
+
+                .shortVersion-card{
+
+                    .card{
+                        width:11rem;
+    
+                        .card-img-top{
+                            height: 11rem;
+                            
+                        }
+    
+                    }
+
+                }
+                
+                
+                
+            }
+
+        
+    }
+
+}
+
+@media (max-width: 520px){
+    
+    .similarRecipesCards-wrapper{
+
+            .similarRecipesCards-content{
+
+                grid-template-columns: repeat(2,8.5rem);
+                grid-gap: 5px;
+
+                .shortVersion-card{
+
+                    .card{
+                        width:8rem;
+    
+                        .card-img-top{
+                            height: 8rem;
+                            
+                        }
+
+                        .card-body{
+
+                            padding: 10px;
+
+                            .card-subtitle{
+                                height: 40px;
+                                font-size: 75%;
+                                margin-bottom: 10px;
+                            }
+        
+                            .ratings{
+        
+                                font-size: 75%;
+        
+                            }
+
+                        }
+    
+                    }
+
+                }
+                
+            }
+
+        
+    }
+
+}
