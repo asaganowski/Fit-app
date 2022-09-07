@@ -1,12 +1,12 @@
 body{
   
   overflow-x: hidden;
-  background-color: #f7f3f3;
+  background-color: var(--page-color);
   
 
   .page{
         
-    background-color: #f7f3f3;
+    background-color: var(--page-color);
 
     .content{
       margin: 40px auto;
@@ -35,6 +35,8 @@ body{
     :root{
       --special-color: rgb(92, 146, 255);
       --grey-color: rgb(119, 119, 119);
+      --page-color: #f7f3f3;
+      --border-radius: 0.3rem;
     }
 
      
