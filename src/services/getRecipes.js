@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 const apiHeaders={
     
-  'X-RapidAPI-Key': '24695fce5bmsh83c5cdddb24c7b9p1287ccjsn84e370febdc3',
-    'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
+  'X-RapidAPI-Key': '57b74ded35msh39c5afb8778fc2cp1fbe63jsn8c50c564f0f4',
+		'X-RapidAPI-Host': 'yummly2.p.rapidapi.com'
       
 }
 
