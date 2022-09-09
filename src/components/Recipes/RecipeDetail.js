@@ -46,7 +46,8 @@ export default function RecipeDetail(){
                
                return (
            
-                       <ListGroup.Item key={index}><input type="checkbox"/>{ingredients.ingredient.toString().charAt(0).toUpperCase()+ingredients.ingredient.slice(1)}</ListGroup.Item>
+                       <ListGroup.Item key={index}><input type="checkbox"/>&emsp;
+                       {ingredients.ingredient.toString().charAt(0).toUpperCase()+ingredients.ingredient.slice(1)}</ListGroup.Item>
    
                    
                    )
@@ -70,11 +71,13 @@ export default function RecipeDetail(){
 
     const URL = recipe?.content?.details?.attribution?.url
 
+    const phrase = `Check out this awesome recipe! Thank me later ;)`
+
     const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${URL}` 
 
-    const telegramURL = `https://telegram.me/share/url?url=${URL}&text=Check out this awesome recipe! Thank me later ;)`
+    const telegramURL = `https://telegram.me/share/url?url=${URL}&text=${phrase}`
 
-    const twitterURL = `https://twitter.com/share?url=${URL}&text=Check out this awesome recipe! Thank me later ;)`
+    const twitterURL = `https://twitter.com/share?url=${URL}&text=${phrase}`
   
   
   console.log(recipe)
@@ -136,7 +139,7 @@ export default function RecipeDetail(){
                                     <FaTelegram/> Telegram
                                 </a>
 
-                                <a href="mailto:?subject=Great Recipe!&body=Check out this awesome recipe! Thank me later ;)" className="shareBtn mail">
+                                <a href={`mailto:?subject=Great Recipe!&body=Check out this awesome recipe! Thank me later ;)`} className="shareBtn mail">
                                     <RiMailLine/> Email
                                 </a>
                             </div>

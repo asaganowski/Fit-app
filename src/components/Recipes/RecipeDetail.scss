@@ -47,7 +47,7 @@
                 img{
                     border-radius: 20px;
                     width:100%;
-                    max-width: 450px;
+                    max-width: 410px;
                     max-height: 450px;
                     display: block;
                     margin-left: auto;
@@ -118,16 +118,18 @@
                             padding: 10px;
                             margin:5px;
                             border-radius: 10px;
+                            display: flex;
                             align-items: center;
+
+                            svg{
+                                margin-right: 3px;
+                                font-size: 18px;
+                            }
                             
                         }
 
                         .shareBtn:hover{
                             opacity: 0.7;
-                        }
-
-                        svg{
-                            font-size: 18px;
                         }
 
                         .mail{
@@ -269,6 +271,10 @@
                                 font-size: 12px;
                                 padding: 5px;
                                 border-radius: 7px;
+
+                                svg{
+                                    font-size: 16px;
+                                }
                             }
                         }
                     }
@@ -311,7 +317,7 @@
 
                     img{
                         max-width: 350px;
-                        max-height: 300px;
+                        max-height: 360px;
                     }
                 }
 
@@ -355,7 +361,7 @@
 
 }
 
-@media (max-width: 750px){
+@media (max-width: 760px){
 
     .recipeDetail-wrapper{
 
@@ -389,10 +395,9 @@
 
                         .share-links{
 
-
                             .shareBtn{
                                 font-size: 11px;
-                                margin: 3px;
+                                margin: 2%;
                             }
                         }
                     }

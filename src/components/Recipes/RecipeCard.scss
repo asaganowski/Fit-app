@@ -90,7 +90,7 @@
   }
 }
 
-@media (min-width: 920px) and (max-width: 1270px){
+@media (min-width: 960px) and (max-width: 1340px){
 
   .recipeCards-content{
     .card{
@@ -138,7 +138,7 @@
 }
 
 
-@media (max-width: 625px){
+@media (max-width: 660px){
 
     .recipeCards-content{
       .card{
@@ -179,7 +179,7 @@
 
                   .macro-attribute{
                     margin-bottom: 3px;
-                    font-size: 10.5px;
+                    font-size: 10px;
 
                     small{
                       font-size: 8px;
@@ -200,7 +200,7 @@
               margin-bottom: 0;
               p{
                 margin-bottom: 5px;
-                font-size: 12px;
+                font-size: 10px;
               }
               
               p.ratings{
