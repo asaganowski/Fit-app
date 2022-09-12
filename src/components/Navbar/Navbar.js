@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="navbar-content">
 
         <Link to="/"> 
-            <h3 className="appName">FitApp</h3>
+            <h3 className="appName">Fitt-App</h3>
         </Link>
 
         
