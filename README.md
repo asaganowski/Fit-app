@@ -10,6 +10,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## General info
 This project was created to practice ReactJS. 
+
+Live Demo: https://fitt-app.netlify.app/
 	
 ## Stack Technology
 Project was created with:
