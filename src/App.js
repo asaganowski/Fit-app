@@ -13,10 +13,13 @@ import Footer from "./components/Footer/Footer";
 import RecipeDetail from "./components/Recipes/RecipeDetail"
 import ScrollToTop from "./components/ScrollToTop";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useAuth0 } from "@auth0/auth0-react";
+import Profile from "./components/Profile/Profile";
 
 
 export default function App() {
-  
+
+  const {isAuthenticated} = useAuth0()
 
     return (
       <div className="page">
@@ -31,6 +34,7 @@ export default function App() {
             <Route path='/recipes' element={<Recipes />}/>
             <Route path='/exercises' element={<Exercises />}/>
             <Route path="/recipeDetails/:recipeId" element={<RecipeDetail />}/>
+            {isAuthenticated && <Route path="/profile" element={<Profile />}/>}
             
           </Routes>
         </ScrollToTop>

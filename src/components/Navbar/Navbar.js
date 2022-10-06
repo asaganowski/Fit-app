@@ -3,13 +3,16 @@ import {
   NavLink,
   Link
 } from "react-router-dom";
+import LoginBtn from "./LoginBtn";
 import "./Navbar.scss";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import LogoutBtn from "./LogoutBtn";
 
 
 export default function Navbar() {
 
   const [mobileActivity, setMobileActivity] = useState("inactive");
+  const {isAuthenticated } = useAuth0()
 
   function toggleMenu() {
     mobileActivity === "active" ? setMobileActivity("inactive") : setMobileActivity("active");
@@ -38,6 +41,23 @@ export default function Navbar() {
           <li><NavLink to="/exercises" onClick={() => setMobileActivity("inactive")}>Exercises</NavLink></li>
 
           <li><NavLink to="/recipes" onClick={() => setMobileActivity("inactive")}>Recipes</NavLink></li>
+
+          {isAuthenticated ? (
+            <>
+              <li>
+                <NavLink to="/profile">
+                  Profile
+                </NavLink>
+              </li>
+              <li>
+                <LogoutBtn />
+              </li>
+            </>
+        ) : (
+          <li>
+            <LoginBtn />
+          </li>
+        )}
         
         </ul>
 

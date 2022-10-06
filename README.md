@@ -22,6 +22,7 @@ Project was created with:
 * REST API
 * CHART.js
 * Bootstrap
+* Authorization (useAuth0)
 
 ## Available Scripts
 

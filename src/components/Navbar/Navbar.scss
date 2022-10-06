@@ -48,7 +48,7 @@
 
       }
 
-      a.active, a:hover {
+      a.active, a:hover{
           color: var(--special-color);
       }
 
@@ -57,12 +57,23 @@
             list-style-type: none;
             display:flex;
             padding: 0;
-            //margin-left: auto;
+            align-items: center;
             
         li{
               margin-left: 20px;
+              font-size: 18px;
                 
         }
+
+        .btn{
+          font-size: 18px;
+          font-weight:bold;
+
+          svg{
+            font-size: 22px;
+          }
+        }
+
       }
     }      
             
