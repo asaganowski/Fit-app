@@ -101,7 +101,7 @@ export default function Exercises() {
             onClick={() => {
                 window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
               }}
-            pageRangeDisplayed={4}
+            pageRangeDisplayed={3}
             marginPagesDisplayed={2}
             
           />
