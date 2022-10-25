@@ -12,6 +12,11 @@ body{
       margin: 40px auto;
       width: 85%;
       min-height: 700px;
+
+      .card{
+        border:none;
+        box-shadow: 3px 3px 3px rgb(136, 128, 128);
+      }
       
     }
 
